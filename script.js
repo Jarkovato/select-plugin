@@ -34,17 +34,17 @@ class Select {
       this.options = options;
       this.selectedId = options.selectedId;
 
-      this.#render();
-      this.#setup();
+      this.render();
+      this.setup();
   }
   // создаем инпут
-  #render() {
+  render() {
       const {placeholder, data} = this.options;
       this.$el.classList.add('select');
       this.$el.innerHTML = getTemplate(data, placeholder, this.selectedId);
   }
   //задаем события
-  #setup() {
+  setup() {
       this.clickHandler = this.clickHandler.bind(this);
       this.$el.addEventListener('click', this.clickHandler);
       this.$arrow = this.$el.querySelector('[data-type="arrow"');
