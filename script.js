@@ -1,5 +1,5 @@
 const getTemplate = (data = [], placeholder , selectedId) => {
-  let text = placeholder ?? 'Текст';
+  let text = placeholder || 'Текст';
 
   const items = data.map( item => {
       let cls = '';
